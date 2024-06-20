@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+---
+
+<BaseLayout
+	title="Blog | Anson Chung"
+	description="Anson Chung's Blog"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Blog"
+				tagline="I write about web development, design, and more."
+				align="start"
+			/>
+		</main>
+	</div>
+</BaseLayout>
