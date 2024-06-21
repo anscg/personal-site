@@ -3,11 +3,10 @@ import Icon from './Icon.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-	<div class="group">
-		<p>
-			Built with <a href="https://astro.build/">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
+<footer class="end-0 flex flex-col gap-12 mt-auto px-12 pb-8 text-center text-[#4B83B6] text-sm">
+	<div class="flex flex-row gap-x-6 flex-wrap">
+		<p class="flex flex-row gap-1 flex-wrap">
+			Built with <a href="https://astro.build/">Astro</a><Icon icon="rocket-launch" size="1.2em" />
 		</p>
 		<p>&copy; {currentYear} Anson Chung</p>
 	</div>
@@ -18,16 +17,6 @@ const currentYear = new Date().getFullYear();
 	</p>
 </footer>
 <style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
-		text-align: center;
-		color: #4B83B6;
-		font-size: var(--text-sm);
-	}
 
 	footer a {
 		color: #4B83B6;
@@ -59,12 +48,6 @@ const currentYear = new Date().getFullYear();
 			flex-direction: row;
 			justify-content: space-between;
 			padding: 2.5rem 5rem;
-		}
-
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
 		}
 
 		.socials {
