@@ -21,7 +21,9 @@ import anime from 'animejs';
 		import { sample } from 'remeda'
 
 		var textWrapper = document.querySelector(".herotext");
-		textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter inline-block'>$&</span>");
+		if (textWrapper && textWrapper.textContent) {
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter inline-block'>$&</span>");
+		}
 
 		const negativeList = [1, -1] as const
 		const randomNegative = () => sample(negativeList, 1)[0]
