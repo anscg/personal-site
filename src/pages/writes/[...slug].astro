@@ -1,23 +1,22 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/WritesLayout.astro';
 
-import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 
 interface Props {
-	entry: CollectionEntry<'work'>;
+	entry: CollectionEntry<'writes'>;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const work = await getCollection('work');
-	return work.map((entry) => ({
+	const writes = await getCollection('writes');
+	return writes.map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
 	}));
@@ -31,28 +30,19 @@ const { Content } = await entry.render();
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
-				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
-					<Hero title={entry.data.title} align="start">
-						<div class="details">
-							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-							</div>
-							<p class="description">{entry.data.description}</p>
-						</div>
-					</Hero>
+				<div class="wrapper stack gap-2 ">
+					<a class="back-link text-slate-300 " href="/writes/"><Icon icon="arrow-left" /> writes</a>
+					<h1 class="text-center instrument-serif-regular-italic text-slate-200">{entry.data.title}</h1>
 				</div>
 			</header>
 			<main class="wrapper">
-				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+				<div class="stack gap-10 content text-2xl source-serif-4 text-slate-100">
 					<div class="content">
 						<Content />
 					</div>
 				</div>
 			</main>
 		</div>
-		<ContactCTA />
 	</div>
 </BaseLayout>
 
@@ -86,7 +76,7 @@ const { Content } = await entry.render();
 	}
 
 	.content {
-		max-width: 65ch;
+		max-width: 100ch;
 		margin-inline: auto;
 	}
 
