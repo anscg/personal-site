@@ -27,7 +27,42 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-	<div class="stack gap-20">
+	<script>
+		import anime from "animejs";
+		import { sample } from 'remeda'
+
+		anime.timeline({loop: false})
+  			.add({
+  			  	targets: '.content',
+  			  	opacity: [0, 1],
+      			filter: ['blur(20px)', 'blur(0px)'],
+      			translateY: () => [
+      			  400,
+      			  0,
+      			],
+				delay: 200,
+      			duration: 700,
+      			easing: 'spring(1, 80, 30, 0)',
+
+  			})
+
+		anime.timeline({loop: false})
+  			.add({
+  			  	targets: '.back-link',
+  			  	opacity: [0, 1],
+      			filter: ['blur(20px)', 'blur(0px)'],
+      			translateX: () => [
+      			  100,
+      			  0,
+      			],
+				delay: 1000,
+      			duration: 500,
+      			easing: 'spring(1, 80, 100, 0)',
+
+  			})
+
+	</script>
+	<div class="stack gap-20 pb-52">
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2 ">
@@ -49,7 +84,7 @@ const { Content } = await entry.render();
 <style>
 	header {
 		padding-bottom: 2.5rem;
-		border-bottom: 1px solid var(--gray-800);
+		border-bottom: 1px solid var(--gray-);
 	}
 
 	.back-link {
@@ -76,7 +111,7 @@ const { Content } = await entry.render();
 	}
 
 	.content {
-		max-width: 100ch;
+		max-width: 90ch;
 		margin-inline: auto;
 	}
 
@@ -131,7 +166,7 @@ const { Content } = await entry.render();
 
 		.details {
 			flex-direction: row;
-			gap: 2.5rem;
+			gap: 2.5rem; 
 		}
 
 		.content :global(blockquote) {
