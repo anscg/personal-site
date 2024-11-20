@@ -1,11 +1,10 @@
 ---
 title: The Journey To A Better Self
-publishDate: 2019-12-01 00:00:00
+publishDate: 2024-11-20 00:00:00
 img: /assets/stock-2.jpg
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |
-  We paired with a cutting-edge music API and a team of horticulturalists
-  to build AI-generated playlists that maximize houseplant health.
+  From Guilty Pleasure to Health Saboteur: Unmasking the Allure of Junk Food and Embracing a Life-Changing Dietary Revolution
 tags:
   - Dev
   - Branding
