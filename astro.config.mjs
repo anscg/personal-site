@@ -7,6 +7,6 @@ export default defineConfig({
   site: 'https://anscg.net',
   integrations: [tailwind(), sitemap()],
   redirects: {
-    '/c': { destination: 'https://bento.me/anscg', permanent: true }
+    '/c': 'https://bento.me/anscg'
   }
 });
