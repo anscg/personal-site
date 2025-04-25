@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: 'https://anscg.net',
   integrations: [tailwind(), sitemap()],
-  redirects: [
-    { source: '/c', destination: 'https://bento.me/anscg', permanent: true }
-  ]
+  redirects: {
+    '/c': { destination: 'https://bento.me/anscg', permanent: true }
+  }
 });
